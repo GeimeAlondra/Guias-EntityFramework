@@ -26,6 +26,11 @@ namespace EFDemo
             dgvCustomers.DataSource = cliente;
         }
 
-       
+        private void btnObtenerPorId_Click(object sender, EventArgs e)
+        {
+            var cliente = cr.ObtenerPorID(txtObtenerPorId.Text);
+            List<Customers> listaId = new List<Customers> { cliente };
+            dgvCustomers.DataSource = listaId;
+        }
     }
 }

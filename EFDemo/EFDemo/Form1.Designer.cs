@@ -30,6 +30,9 @@
         {
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
             this.btnObtenerTodo = new System.Windows.Forms.Button();
+            this.txtObtenerPorId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnObtenerPorId = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,17 +54,47 @@
             this.btnObtenerTodo.UseVisualStyleBackColor = true;
             this.btnObtenerTodo.Click += new System.EventHandler(this.btnObtenerTodo_Click);
             // 
+            // txtObtenerPorId
+            // 
+            this.txtObtenerPorId.Location = new System.Drawing.Point(99, 363);
+            this.txtObtenerPorId.Name = "txtObtenerPorId";
+            this.txtObtenerPorId.Size = new System.Drawing.Size(100, 20);
+            this.txtObtenerPorId.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 366);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "IDCustomer";
+            // 
+            // btnObtenerPorId
+            // 
+            this.btnObtenerPorId.Location = new System.Drawing.Point(218, 360);
+            this.btnObtenerPorId.Name = "btnObtenerPorId";
+            this.btnObtenerPorId.Size = new System.Drawing.Size(95, 24);
+            this.btnObtenerPorId.TabIndex = 5;
+            this.btnObtenerPorId.Text = "Obtener";
+            this.btnObtenerPorId.UseVisualStyleBackColor = true;
+            this.btnObtenerPorId.Click += new System.EventHandler(this.btnObtenerPorId_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 428);
+            this.Controls.Add(this.txtObtenerPorId);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnObtenerPorId);
             this.Controls.Add(this.btnObtenerTodo);
             this.Controls.Add(this.dgvCustomers);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,6 +102,9 @@
 
         private System.Windows.Forms.DataGridView dgvCustomers;
         private System.Windows.Forms.Button btnObtenerTodo;
+        private System.Windows.Forms.TextBox txtObtenerPorId;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnObtenerPorId;
     }
 }
 
