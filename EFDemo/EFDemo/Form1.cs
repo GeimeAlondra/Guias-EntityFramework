@@ -32,25 +32,5 @@ namespace EFDemo
             List<Customers> listaId = new List<Customers> { cliente };
             dgvCustomers.DataSource = listaId;
         }
-
-        private Customers CrearCliente()
-        {
-            var cliente = new Customers()
-            {
-                CustomerID = txtCustomerID.Text,
-                CompanyName = txtCompanyName.Text,
-                ContactName = txtContactName.Text,
-                ContactTitle = txtContactTitle.Text,
-                Address = txtAddress.Text,
-            };
-            return cliente;
-        }
-
-        private void btnInsertar_Click(object sender, EventArgs e)
-        {
-            var cliente = CrearCliente();
-            var resultado = cr.InsertarCliente(cliente);
-            MessageBox.Show($"Se inserto {resultado}");
-        }
     }
 }
