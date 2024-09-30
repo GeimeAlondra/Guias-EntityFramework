@@ -30,6 +30,11 @@ namespace EFDemo
         {
             var cliente = cr.ObtenerPorID(txtObtenerPorId.Text);
             List<Customers> listaId = new List<Customers> { cliente };
+
+            if (cliente != null)
+            {
+                LlenarCampos(cliente);
+            }
             dgvCustomers.DataSource = listaId;
         }
 
@@ -46,11 +51,35 @@ namespace EFDemo
             return cliente;
         }
 
+        private void LlenarCampos(Customers customers)
+        {
+            txtCustomerID.Text = customers.CustomerID; 
+            txtCompanyName.Text = customers.CompanyName;
+            txtContactName.Text = customers.ContactName;
+            txtContactTitle.Text = customers.ContactTitle;
+            txtAddress.Text = customers.Address;
+        }
+
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             var cliente = CrearCliente();
             var resultado = cr.InsertarCliente(cliente);
-            MessageBox.Show($"Se inserto {resultado}");
+            MessageBox.Show($"El número de elementos modificados es: {resultado}");
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            var cliente = CrearCliente();
+            cr.UpdateCliente(cliente);
+            var resultado = cr.ObtenerPorID(cliente.CustomerID);
+            List<Customers> lista1 = new List<Customers> { resultado };
+            dgvCustomers.DataSource = lista1;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var eliminar = cr.DeleteCliente(txtCustomerID.Text);
+            MessageBox.Show($"El número de elementos borrados es: {eliminar}");
         }
     }
 }
